@@ -1,0 +1,1247 @@
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+
+<title>AMRITA_FILESTORAGE</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.button {
+  background-color: #f44336;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  text-align: center;
+  text-decoration: underline;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button2{
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  text-align: center;
+  text-decoration: underline;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button1 {
+  background-color: #f44336;
+  border: none;
+  color: white;
+  padding: 26px 30px;
+  text-align: center;
+  text-decoration: underline;
+  display: inline-block;
+  font-size: 35px;
+  margin: 4px 2px;
+   margin: 0;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  
+  }
+  .button4 {
+  background-color: #f44336;
+  border: none;
+  color: white;
+  padding: 26px 30px;
+  text-align: center;
+  text-decoration: underline;
+  display: inline-block;
+  font-size: 35px;
+  margin: 4px 2px;
+   margin: 0;
+  position: absolute;
+  top: 80%;
+  left: 78%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  
+}
+/* Style the header */
+.header {
+  background-color: Yellow;
+  padding: 20px;
+  text-align: center;
+  color: Black;
+  font:bold;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+  
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 65%;
+  padding: 15px;
+}body {
+  background-image: url('1.png');
+background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  width: 100%
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
+<script>
+        function Adding_Details() {
+        var myContract = new web3.eth.Contract(abi,contract_address,{from: account, gasPrice: '500000', gas:'500000'});            
+		var teacher_name=document.getElementById("name1").value;
+		var file_type=document.getElementById("ftype").value;
+  		var course=document.getElementById("cr1").value;
+		var branch=document.getElementById("br1").value;
+  		
+		var subject=document.getElementById("sub1").value;
+		var filehash=document.getElementById("hash1").value;
+		
+		
+			var result = myContract.methods.sendTeacherDetails(filehash,file_type,teacher_name,course,branch,subject).send(function (err, result) {
+        if (err) { console.log(err); }
+        if (result) { document.getElementById("result").innerHTML = result; }   
+                
+				}); 
+        }
+    </script>
+	 <script src="https://cdn.jsdelivr.net/npm/web3@1.2.8/dist/web3.js"></script>
+    <script>	
+	
+	var account;
+	window.addEventListener('load', async () => {
+
+	
+		if (typeof window.ethereum !== 'undefined') { 
+			console.log("MetaMask is Available :) !"); 
+			}
+			
+		// Modern DApp browsers
+		if (window.ethereum) {
+			window.web3 = new Web3(ethereum);
+			
+			// To prevent the page reloading when the MetaMask network changes
+			ethereum.autoRefreshOnNetworkChange = false;
+			
+			// To Capture the account details from MetaMask
+			const accounts = await ethereum.enable();
+			account = accounts[0];
+				
+			}
+		// Legacy DApp browsers
+		else if (window.web3) {
+			//window.web3 = new Web3(web3.currentProvider);
+			window.web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/v3/cbd9dc11b30147e9a2cc974be655ef7c")); 
+			}
+		// Non-DApp browsers
+		else {
+			console.log('Non-Ethereum browser detected. Please install MetaMask');
+			}
+			
+			});
+			var abi = [
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "approved",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "Approval",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "operator",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "approved",
+				"type": "bool"
+			}
+		],
+		"name": "ApprovalForAll",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "approve",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "fileId",
+				"type": "uint256"
+			}
+		],
+		"name": "burnMyToken",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "fileId",
+				"type": "uint256"
+			}
+		],
+		"name": "mintMyToken",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "safeTransferFrom",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bytes",
+				"name": "_data",
+				"type": "bytes"
+			}
+		],
+		"name": "safeTransferFrom",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "hash",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "filetype",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "stdid",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "course",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "branch",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "subname",
+				"type": "string"
+			}
+		],
+		"name": "sendStudentDetails",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "hash",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "filetype",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "teacher",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "course",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "branch",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "subname",
+				"type": "string"
+			}
+		],
+		"name": "sendTeacherDetails",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "operator",
+				"type": "address"
+			},
+			{
+				"internalType": "bool",
+				"name": "approved",
+				"type": "bool"
+			}
+		],
+		"name": "setApprovalForAll",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "Transfer",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "transferFrom",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			}
+		],
+		"name": "balanceOf",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "baseURI",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "getApproved",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getfileId",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "fileId",
+				"type": "uint256"
+			}
+		],
+		"name": "getStudentDetails",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "fileId",
+				"type": "uint256"
+			}
+		],
+		"name": "getTeacherDetails",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "operator",
+				"type": "address"
+			}
+		],
+		"name": "isApprovedForAll",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "name",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "namedecl",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "ownerOf",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "randModulus",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes4",
+				"name": "interfaceId",
+				"type": "bytes4"
+			}
+		],
+		"name": "supportsInterface",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "symbol",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "symboldecl",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "tokenByIndex",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "tokenOfOwnerByIndex",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "tokenURI",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "totalSupply",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "totalSupplycount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
+var contract_address='0x224FF18e3444B10Fa68016906F3B87a32a5cc48b'
+function getfileid()
+{
+            var myContract = new web3.eth.Contract(abi,contract_address, {from: account, gasPrice: '5000000', gas: '500000'});
+             var result = myContract.methods.getfileId().call(function (err, result) {
+				
+				if (err) { console.log(err); }
+                if (result) { 
+					document.getElementById("fileid").value = result;
+					
+                }
+               
+                });
+        }
+function getHashDetails()
+{
+					
+				console.log("Invoking Smart Contracts - Get Student Details");
+				
+				//Instantiate and connect to contract address via ABI
+				var myContract = new web3.eth.Contract(abi,contract_address,{from: account, gasPrice: '500000', gas:'500000'});            
+										
+				//call the retrieve function
+				var iddd = document.getElementById("fid1").value;
+				console.log(iddd);
+				//call the retrieve function
+				var result = myContract.methods.getTeacherDetails(iddd).call(function (err, result) {
+				
+				if (err) { console.log(err); }
+				if (result) { 
+					
+					document.getElementById("get_fidh").value = result[0];
+					document.getElementById("get_ftype").innerHTML = result[1];
+					document.getElementById("get_n").innerHTML = result[2].bold();
+					document.getElementById("get_cou").innerHTML = result[3].bold();
+					document.getElementById("get_bran").innerHTML = result[4].bold();
+					document.getElementById("get_sub").innerHTML = result[5].bold();
+					
+					
+					
+					
+					}
+				
+				});
+					
+			
+}
+function getVariable()
+{
+					
+				console.log("Invoking Smart Contracts - Get Student Details");
+				
+				//Instantiate and connect to contract address via ABI
+				var myContract = new web3.eth.Contract(abi,contract_address,{from: account, gasPrice: '500000', gas:'500000'});            
+										
+				//call the retrieve function
+				var idd = document.getElementById("fids").value;
+				console.log(idd);
+				//call the retrieve function
+				var result = myContract.methods.getStudentDetails(idd).call(function (err, result) {
+				
+				if (err) { console.log(err); }
+				if (result) { 
+					
+					document.getElementById("get_fid").value = result[0];
+					document.getElementById("get_filetype").innerHTML = result[1];
+					document.getElementById("get_nam").innerHTML = result[2].bold();
+					document.getElementById("get_id").innerHTML = result[3].bold();
+					document.getElementById("get_cour").innerHTML = result[4].bold();
+					document.getElementById("get_branc").innerHTML = result[5].bold();
+					document.getElementById("get_subj").innerHTML = result[6].bold();
+					
+					
+					
+					
+					}
+				
+				});
+					
+			
+}
+function del_details() {
+            var myContract = new web3.eth.Contract(abi,contract_address, {from: account, gasPrice: '5000000', gas: '500000'});
+            var idwe = document.getElementById("id2").value;
+             var result = myContract.methods.burnMyToken(idwe).send(function (err, result) {
+               
+                if (err) { console.log(err); }
+                if (result) { 
+                    document.getElementById("result1").innerHTML = result;
+                }
+               
+                });
+        }
+
+    </script>
+</head>
+
+<body style="background-image:"1.png";"max-width:100%;height:auto;>
+	<div class="header">
+  <h1> AMRITA FILE STORAGE </h1>
+  <h2>TEACHER & FILE DETAILS </h2>
+</div>
+
+  <div class="row">
+  <div class="column">     
+        <h3 style="font-size:25px;color: black;
+			text-shadow: -0px 0 black, 0 0px black, 0px 0 black, 0 -1px black;">ENTER FILE DETAILS</h3>
+		
+    <form position="center">
+
+		<table style="width:43%">
+		  <tr>
+			<td><label for="name1">TEACHER_NAME:</label></td>
+			<td><input type="text" id="name1" name="name1"></td>
+		  </tr>
+		  <tr>
+			<td><label for="cr">COURSE:</label></td>
+			<td><input type="text" id="cr1" name="cr1"></td>
+		  </tr>
+		  <tr>
+			<td><label for="cr">BRANCH:</label></td>
+			<td><input type="text" id="br1" name="br1"></td>
+		  </tr>
+		  
+		  <tr>
+			<td><label for="sub">SUBJECT:</label></td>
+			<td><input type="text" id="sub1" name="sub1"></td>
+		  </tr>
+		  <tr>
+			<td><label for="sub">FILE_HASH:</label></td>
+			<td><input type="text" id="hash1" name="hash1"></td>
+		  </tr>
+		  <tr>
+			<td><label for="sub">FILE_TYPE:</label></td>
+			<td><input type="text" id="ftype" name="Filetype"></td>
+			<td>For eg: Project Material,Marks sheet,etc.,</td>
+		  </tr>
+		  <tr>
+		  <td><tr><td><input type="button" class="button" onclick="Adding_Details()" value="SUBMIT"></td></td>
+		  </tr>
+		</table>
+		<h4 style="font-size:25px;color: black;
+			text-shadow: -0px 0 black, 0 0px black, 0px 0 black, 0 -1px black;"> TRANSACTION ID: <a href=""><div id="result"></div></a></h4> 
+	</div>
+	
+	</form>
+	<form>
+		<table style="width:25%"> 
+            <tr>
+			<td style="font-size:25px;color: black;
+			text-shadow: -0px 0 black, 0 0px black, 0px 0 black, 0 -1px black;">CLICK HERE TO GET YOUR FILE_ID:</td>
+			 </tr>
+		  <tr>
+		  <td><input type="button" class="button" onclick="getfileid()" value="GET_FILEID" color="red"></td>
+		  </tr>
+		</table>
+		<td> <input type="text" id="fileid" value=" " > <button class="button2" onclick="myFunction2()">Copy ID</button></td></td> 
+	
+	
+	</form>
+	
+	<br>
+	<form>
+		<h3 style="font-size:25px;color: black;
+			text-shadow: -0px 0 black, 0 0px black, 0px 0 black, 0 -1px black;">CURRENT FILE DETAILS</h3>
+		<table>
+	<!--	<tr>
+			<td> ENTER ID:</td>
+			<td><input type="text" id="id1" name="id1"></td>
+		  </tr>
+		  </tr><input type="button" onclick="Adding_Details()" value="Add Details">
+		  <input type="button"  value="Get Details">
+		  -->
+		  
+		
+		  
+        
+        
+			<table style="width:25%">
+			<tr>
+				<td div style="color: black;
+			text-shadow: -0px 0 black, 0 0px black, 0px 0 black, 0 -1px black;">ENTER FILE ID:</td>
+				<td><input type="number" id="fid1" name="fid">
+			</tr>
+		 </table>
+		 
+		</form>
+		</table>
+			<form>
+			<table>
+			<tr>
+				<td>FILE_HASH:</td>
+				
+				<td><input type="text" id="get_fidh" value=" " > <button class="button2" onclick="myFunction()">Copy Hash</button><button class="button2" onclick="myFunction1()">Open-File</button></td>
+			
+				<td><b><div style="font-size:25px;color: yellow;
+	  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;" id="get_fidh"></b></td>
+			</tr>
+			<tr>
+			  <td>FILE_TYPE:</td>
+				<td><b><div style="font-size:25px;color: yellow;
+	  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;" id="get_ftype"></b></td>
+			  </tr>
+			  
+			 <tr>
+				<td>TEACHER_NAME:</td>
+				<td><b><div style="font-size:25px;color: yellow;
+	  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;" id="get_n"></b></td>
+			  </tr>
+			  <tr>
+				<td>COURSE:</td>
+				<td><b><div style="font-size:25px;color: yellow;
+	  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;" id="get_cou"></b></td>
+			  </tr>
+			  <tr>
+				<td>BRANCH:</td>
+				<td><b><div style="font-size:25px;color: yellow;
+	  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;" id="get_bran"></b></td>
+			  </tr>
+			
+			  <tr>
+				<td>SUBJECT:</td>
+				<td><b><div style="font-size:25px;color: yellow;
+	  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;" id="get_sub"></b></td>
+			  </tr>
+						<tr><td><input type="button" class="button" onclick="getHashDetails()" value="GET_DETAILS"></td></tr>
+			  </table>
+			  
+			</form> 
+
+
+	</div>
+			
+			
+			 <form>
+		<h3 style="font-size:25px;color: black;
+			text-shadow: -0px 0 black, 0 0px black, 0px 0 black, 0 -1px black;">CURRENT STUDENT FILE DETAILS</h3>
+		<table>
+	<!--	<tr>
+			<td> ENTER ID:</td>
+			<td><input type="text" id="id1" name="id1"></td>
+		  </tr>
+		  </tr><input type="button" onclick="testVariable()" value="Add Details">
+		  <input type="button"  value="Get Details">
+		  -->
+		  
+		
+		  
+        
+        
+			<table style="width:25%">
+			<tr>
+				<td div style="color: black;
+			text-shadow: -0px 0 black, 0 0px black, 0px 0 black, 0 -1px black;">ENTER FILE ID:</td>
+				<td><input type="number" id="fids" name="fids">
+			</tr>
+		 </table>
+		 
+		</form>
+		</table>
+			<form>
+			<table>
+			<tr>
+				<td>FILE_HASH:</td>
+				
+				<td><input type="text" id="get_fid" value=" " > <button class="button2" onclick="myFunction2()">Copy Hash</button><button class="button2" onclick="myFunction5()">Open-File</button></td>
+	  
+	  <td><b><div style="font-size:25px;color: yellow;
+	  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;" id=""></b></td>
+			  <tr>
+			  <td>FILE_TYPE:</td>
+				<td><b><div style="font-size:25px;color: yellow;
+	  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;" id="get_filetype"></b></td>
+			  </tr>
+			  </tr>
+			 <tr>
+				<td>STUDENT_NAME:</td>
+				<td><b><div style="font-size:25px;color: yellow;
+	  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;" id="get_nam"></b></td>
+			  </tr>
+			  <tr>
+				<td>STUDENT_ID:</td>
+				<td><b><div style="font-size:25px;color: yellow;
+	  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;" id="get_id"></b></td>
+			  </tr>
+			  <tr>
+				<td>STUDENT_COURSE:</td>
+				<td><b><div style="font-size:25px;color: yellow;
+	  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;" id="get_cour"></b></td>
+			  </tr>
+			  <tr>
+				<td>STUDENT_BRANCH:</td>
+				<td><b><div style="font-size:25px;color: yellow;
+	  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;" id="get_branc"></b></td>
+			  </tr>
+			
+			  <tr>
+				<td>SUBJECT:</td>
+				<td><b><div style="font-size:25px;color: yellow;
+	  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;" id="get_subj"></b></td>
+			  </tr>
+						<tr><td><input type="button" class="button" onclick="getVariable()" value="GET_DETAILS"></td></tr>
+			  </table>
+			  
+			</form> 
+					
+
+        					
+		        <h2>REMOVE FILE</h2>
+    <form style="width:25%">
+		<table> 
+            <tr>
+			<td>ENTER_EXISTING_FILE_ID:</td>
+			<td><input type="text" id="id2" name="id2"></td>
+		  </tr>
+		  <tr>
+		  <td><input type="button" class="button" onclick="del_details()" value="DELETE EMPLOYEE"></td>
+		  </tr>
+		</table>
+		
+		<h4> TRANSACTION ID: <a href=""><div id="result1"></div></a></h4> 
+</form>
+			
+			</div>
+			
+			
+			<br>
+			
+			<input type="button" class="button4" onclick="myFunction3()" value="Click here to redirect IPFS-PAGE">
+			<br>
+			<br>
+			
+			        <input type="button" class="button1" onclick="myFunction4()" value="HOME">
+					
+	
+	<script>
+	function myFunction3() {
+	  location.replace("http://localhost:3000/")
+	}
+	</script>
+	<script>
+	function myFunction4() {
+	  location.replace("http://localhost/Project")
+	}
+	</script>
+	
+	<script>
+	function myFunction() {
+  var copyText = document.getElementById("get_fidh");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  alert("Copied the Hash: " + copyText.value);
+  
+}
+function myFunction1() {
+  var copyText = document.getElementById("get_fidh");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  window.open("https://ipfs.io/ipfs/"+copyText.value);
+  
+}
+function myFunction5() {
+  var copyText = document.getElementById("get_fid");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  window.open("https://ipfs.io/ipfs/"+copyText.value);
+  
+}
+function myFunction2() {
+  var copyText = document.getElementById("fileid");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  alert("Copied the ID: " + copyText.value);
+}
+</script>
+	
+			</body>
+		
+	</html>
+	
