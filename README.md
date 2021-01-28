@@ -11,13 +11,13 @@
 - Flow-graph for Teacher
 
  <p align="center">
-  <img src="Assets/Usecases/teacher.png" alt="Teacher Flow Graph" width="500" height="400">
+  <img src="Assets/Usecases/teacher.png" alt="Teacher Flow Graph" width="700" height="300">
   </p>
 
 - Flow-graph for Student
 
  <p align="center">
-  <img src="Assets/Usecases/student.png" alt="Student Flow Graph" width="500" height="400">
+  <img src="Assets/Usecases/student.png" alt="Student Flow Graph" width="700" height="300">
   </p>
   
   - Ownership Transferring with ERC-721 Token
