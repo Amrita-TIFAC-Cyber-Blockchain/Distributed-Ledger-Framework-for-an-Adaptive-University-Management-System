@@ -3,7 +3,7 @@
 <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 <meta content="utf-8" http-equiv="encoding">
 
-<title>AMRITA_FILESTORAGE</title>
+<title>University-Management-System</title>
 <style>
 * {
   box-sizing: border-box;
@@ -113,7 +113,7 @@ body {
   width: 65%;
   padding: 15px;
 }body {
-  background-image: url('1.png');
+  background-image: url('images/background.png');
 background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;}
@@ -264,31 +264,12 @@ background-repeat: no-repeat;
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "fileId",
+				"name": "_FileID",
 				"type": "uint256"
 			}
 		],
 		"name": "burnMyToken",
 		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "fileId",
-				"type": "uint256"
-			}
-		],
-		"name": "mintMyToken",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
 		"stateMutability": "nonpayable",
 		"type": "function"
 	},
@@ -558,7 +539,7 @@ background-repeat: no-repeat;
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "fileId",
+				"name": "_FID",
 				"type": "uint256"
 			}
 		],
@@ -607,7 +588,7 @@ background-repeat: no-repeat;
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "fileId",
+				"name": "_fileId",
 				"type": "uint256"
 			}
 		],
@@ -685,19 +666,6 @@ background-repeat: no-repeat;
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "namedecl",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"inputs": [
 			{
 				"internalType": "uint256",
@@ -711,19 +679,6 @@ background-repeat: no-repeat;
 				"internalType": "address",
 				"name": "",
 				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "randModulus",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
@@ -751,19 +706,6 @@ background-repeat: no-repeat;
 	{
 		"inputs": [],
 		"name": "symbol",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "symboldecl",
 		"outputs": [
 			{
 				"internalType": "string",
@@ -848,22 +790,10 @@ background-repeat: no-repeat;
 		],
 		"stateMutability": "view",
 		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "totalSupplycount",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
 	}
 ]
-var contract_address='0x224FF18e3444B10Fa68016906F3B87a32a5cc48b'
+
+var contract_address='0x3CAcc952f050E4dEd27ADE73f6dC64bF62542c90'
 function getfileid()
 {
             var myContract = new web3.eth.Contract(abi,contract_address, {from: account, gasPrice: '5000000', gas: '500000'});
@@ -960,9 +890,9 @@ function del_details() {
     </script>
 </head>
 
-<body style="background-image:"1.png";"max-width:100%;height:auto;>
+<body style="background-image:"background.png";"max-width:100%;height:auto;>
 	<div class="header">
-  <h1> AMRITA FILE STORAGE </h1>
+  <h1> University-Management-System </h1>
   <h2>TEACHER & FILE DETAILS </h2>
 </div>
 
