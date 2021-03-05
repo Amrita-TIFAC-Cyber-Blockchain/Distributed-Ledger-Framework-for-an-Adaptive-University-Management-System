@@ -20,16 +20,22 @@
   <img src="Assets/Usecases/student.png" alt="Student Flow Graph" width="700" height="300">
   </p>
   
-  - Ownership Transferring with ERC-721 Token
+## Ownership Transferring with ERC-721 Token
 
  <p align="center">
   <img src="Assets/Usecases/ownership.png" alt="Ownership Transferring" width="500" height="400">
   </p> 
   
-   - Token Details 
+## Token Details 
 
  <p align="center">
-  <img src="Assets/Usecases/token1.png" alt="Ownership Transferring" width="500" height="400">
+  <img src="Assets/Usecases/Tokens1.png" alt="Ownership Transferring" width="500" height="400">
+  </p> 
+  
+## Online Exam Architecture 
+  
+ <p align="center">
+  <img src="Assets/Usecases/Tokens1.png" alt="Ownership Transferring" width="500" height="400">
   </p> 
 
 ## Demo
