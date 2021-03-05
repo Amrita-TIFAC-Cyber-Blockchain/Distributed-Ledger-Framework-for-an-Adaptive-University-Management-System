@@ -35,7 +35,7 @@
 ## Online Exam Architecture 
   
  <p align="center">
-  <img src="Assets/Usecases/Tokens1.png" alt="Ownership Transferring" width="500" height="400">
+  <img src="Assets/System_Architecture/Online-MCQ.png" alt="Ownership Transferring" width="500" height="400">
   </p> 
 
 ## Demo
