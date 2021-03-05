@@ -4,7 +4,7 @@
 
 ## Proposed Architecture 
 <p align="center">
-<img src="Assets/System_Architecture/System_Architecture.png" alt="System Architecture" width="400" height="500">
+<img src="Assets/System_Architecture/System_Architecture.png" alt="System Architecture" width="500" height="500">
 </p>
 
 ## Usecases 
@@ -23,7 +23,13 @@
   - Ownership Transferring with ERC-721 Token
 
  <p align="center">
-  <img src="Assets/Usecases/Control-Flow.png" alt="Ownership Transferring" width="500" height="400">
+  <img src="Assets/Usecases/ownership.png" alt="Ownership Transferring" width="500" height="400">
+  </p> 
+  
+   - Token Details 
+
+ <p align="center">
+  <img src="Assets/Usecases/token1.png" alt="Ownership Transferring" width="500" height="400">
   </p> 
 
 ## Demo
