@@ -1,4 +1,5 @@
 # Distributed Ledger Framework for an Adaptive University Management System
+![](https://img.shields.io/badge/BlockchainCourse-18CY712-green) ![](https://img.shields.io/badge/AmritaBlockchain-Completed-brightgreen) ![](https://img.shields.io/badge/Publication-Springer-brightgreen)
 
 ## Abstract 
 The true power and the state of any technology are best known during difficult times. The yet-to-over COVID-19 lockdown has unleashed the power of online
