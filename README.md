@@ -1,5 +1,7 @@
 # Distributed Ledger Framework for an Adaptive University Management System
-![](https://img.shields.io/badge/BlockchainCourse-18CY712-green) ![](https://img.shields.io/badge/AmritaBlockchain-Completed-brightgreen) ![](https://img.shields.io/badge/Publication-Springer-brightgreen)
+![](https://img.shields.io/badge/Batch-19CYS-green) ![](https://img.shields.io/badge/BlockchainCourse-18CY712-green) ![](https://img.shields.io/badge/Focus-Education-yellow) ![](https://img.shields.io/badge/AmritaBlockchain-Completed-brightgreen) ![](https://img.shields.io/badge/Publication-Springer-brightgreen) <br/>
+![](https://img.shields.io/badge/Blockchain-Ethereum-blue) ![](https://img.shields.io/badge/NFT-ERC721-blue) ![](https://img.shields.io/badge/Storage-IPFS,_IPNS-blue) ![](https://img.shields.io/badge/Security-SecretSharing-blue)
+
 
 ## Abstract 
 The true power and the state of any technology are best known during difficult times. The yet-to-over COVID-19 lockdown has unleashed the power of online
@@ -46,7 +48,7 @@ evaluating their student’s learning progress. The need for an online-virtual-r
 [Click here](https://amrita-tifac-cyber-blockchain.github.io/Distributed-Ledger-Framework-for-an-Adaptive-University-Management-System//UI/html/index.html) to access the webpage.
 
 ## Acknowledgement 
-We would like to acknowldge the support provided by TIFAC-CORE in Cyber Security, Amrita School of Engineering, Amrita Vishwa Vidyapeetham, Coimbatore in carrying out this work as part of "Blockchain Technology" Course. 
+We would like to acknowldge the support provided by **TIFAC-CORE in Cyber Security**, Amrita School of Engineering, Amrita Vishwa Vidyapeetham, Coimbatore in carrying out this work as part of "**18CY712 - Blockchain Technology**" Course. 
 
 ## References
 -  A.  K.  Shrivastava,  C.  Vashistth,  A.  Rajak  and  A.  K.  Tripathi,  ”A  Decen-tralized  Way  to  Store  and  Authenticate  Educational  Documents  on  PrivateBlockchain,”  2019  International  Conference  on  Issues  and  Challenges  in  Intelli-gent  Computing  Techniques  (ICICT),  GHAZIABAD,  India,  2019,  pp.  1-6,  doi:10.1109/ICICT46931.2019.8977633.
@@ -60,4 +62,4 @@ We would like to acknowldge the support provided by TIFAC-CORE in Cyber Security
 - Amrita University Management System(AUMS).https://www.amrita.edu/aums/about
 
 ## Publications 
-
+TBD
