@@ -1,4 +1,4 @@
-# Distributed Ledger Framework for an Adaptive University Management System
+# Distributed Ledger Framework for an Adaptive University Management System ![](https://img.shields.io/badge/-Completed-darkgreen)
 ![](https://img.shields.io/badge/Batch-19CYS-green) ![](https://img.shields.io/badge/BlockchainCourse-18CY712-green) ![](https://img.shields.io/badge/Focus-Education-yellow) ![](https://img.shields.io/badge/AmritaBlockchain-Completed-brightgreen) ![](https://img.shields.io/badge/Publication-Springer-brightgreen) <br/>
 ![](https://img.shields.io/badge/Blockchain-Ethereum-blue) ![](https://img.shields.io/badge/NFT-ERC721-blue) ![](https://img.shields.io/badge/Storage-IPFS,_IPNS-blue) ![](https://img.shields.io/badge/Security-SecretSharing-blue)
 
