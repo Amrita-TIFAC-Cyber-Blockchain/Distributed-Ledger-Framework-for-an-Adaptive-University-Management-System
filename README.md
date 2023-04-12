@@ -63,3 +63,4 @@ We would like to acknowldge the support provided by **TIFAC-CORE in Cyber Securi
 
 ## Publications 
 [Sivadanam Y.L., Ramaguru R., Sethumadhavan M.]() (2022) **Distributed Ledger Framework for an Adaptive University Management System.** In: Chaki N., Devarakonda N., Cortesi A., Seetha H. (eds)_ Proceedings of International Conference on Computational Intelligence and Data Engineering._ Lecture Notes on Data Engineering and Communications Technologies, vol 99. pp. 295-306. Springer, Singapore. https://doi.org/10.1007/978-981-16-7182-1_24
+
